@@ -92,17 +92,14 @@ Forecast: {period['detailedForecast']}
 
 
 """
-To run this weather service:
+# Running the Weather Service
 
-In Claude Desktop, add the following to the config:
+This weather service can be configured as an MCP server in Claude or Cursor.
 
-```
-{
-    "mcpServers": {
-        "weather": {
-            "command": "uv",
-            "args": [
-```
+## In Claude Desktop
+Add the following to the Claude Desktop configuration:
+
+```json
 {
     "mcpServers": {
         "weather": {
@@ -118,10 +115,11 @@ In Claude Desktop, add the following to the config:
 }
 ```
 
-To add this in Cursor, go to Cursor Settings -> MCP Servers -> Add MCP Server
-Name: <Anything>
-Type: Command
-Command: uv run /ABSOLUTE/PATH/TO/PARENT/FOLDER/weather/weather.py
+## In Cursor
+Go to Cursor Settings -> MCP Servers -> Add MCP Server
+- Name: Weather (or any name you prefer)
+- Type: Command
+- Command: uv run /ABSOLUTE/PATH/TO/PARENT/FOLDER/weather/weather.py
 """
 if __name__ == "__main__":
     # Initialize and run the server
